@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finer Fleet CRM — Platform Sitemap</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          syne: ['Syne', 'sans-serif'],
+          dm: ['DM Sans', 'sans-serif'],
+        },
+        colors: {
+          fleet: {
+            bg:       '#0a0a0a',
+            surface:  '#141414',
+            surface2: '#1a1a1a',
+            border:   'rgba(255,255,255,0.07)',
+            bright:   'rgba(255,255,255,0.13)',
+            accent:   '#c9a84c',
+            sky:      '#e8c97a',
+            gold:     '#f59e0b',
+            green:    '#10b981',
+            red:      '#ef4444',
+            purple:   '#c9a84c',
+            dim:      '#6b7280',
+            mid:      '#9ca3af',
+            text:     '#e8eaf0',
+          }
+        },
+        boxShadow: {
+          accent: '0 0 20px rgba(201,168,76,0.3)',
+          green:  '0 0 8px rgba(16,185,129,0.5)',
+          purple: '0 0 8px rgba(201,168,76,0.4)',
+          blue:   '0 0 8px rgba(201,168,76,0.4)',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #0a0a0a; font-family: 'DM Sans', sans-serif; }
+  .font-syne { font-family: 'Syne', sans-serif; }
+
+  /* Subtle border using rgba that Tailwind can't express inline */
+  .border-fleet   { border-color: rgba(255,255,255,0.07); }
+  .border-bright  { border-color: rgba(255,255,255,0.13); }
+
+  /* Gradient divider */
+  .divider-gradient {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent);
+  }
+
+  /* Role dot glows */
+  .dot-admin      { background:#c9a84c; box-shadow:0 0 6px rgba(201,168,76,0.6); }
+  .dot-dispatcher { background:#3b82f6; box-shadow:0 0 6px rgba(59,130,246,0.6); }
+  .dot-driver     { background:#10b981; box-shadow:0 0 6px rgba(16,185,129,0.7); }
+
+  /* Card hover lift */
+  .card-hover { transition: border-color .2s, transform .2s; }
+  .card-hover:hover { border-color: rgba(255,255,255,0.13); transform: translateY(-2px); }
+
+  /* Flow step */
+  .flow-step { white-space: nowrap; }
+
+  /* Table hover */
+  .table-row:hover td { background: rgba(255,255,255,0.02); }
+</style>
+</head>
+<body class="text-fleet-text min-h-screen">
+
+<!-- ═══════════════════════════
+     HEADER
+═══════════════════════════ -->
+<header class="bg-[#141414] border-b border-fleet sticky top-0 z-50 backdrop-blur-md">
+  <div class="max-w-[1600px] mx-auto px-12 py-5 flex items-center justify-between flex-wrap gap-4">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870.25 82.01" style="height:34px;width:auto;display:block"><defs><style>.cls-1{fill:#c9a84c;}.cls-2{fill:#fff;}</style></defs><polygon class="cls-1" points="57.27 42.02 34.14 42.02 25.05 71.31 14.34 71.31 26.46 31.92 60.33 31.92 63.48 21.5 18.33 21.5 0 82.01 32.93 82.01 41.61 52.93 53.99 52.85 57.27 42.02"></polygon><polygon class="cls-1" points="66.79 10.59 70 0 24.85 0 21.64 10.59 51.83 10.59 66.79 10.59"></polygon><polygon class="cls-1" points="142.41 31.92 152.31 0 76.76 0 73.55 10.59 103.74 10.59 134.6 10.59 137.68 10.59 134.65 21.3 134.6 21.3 134.6 21.5 70.24 21.5 51.91 82.01 84.84 82.01 93.52 52.93 125.04 52.72 128.07 42.02 86.05 42.02 76.96 71.31 66.25 71.31 78.37 31.92 142.41 31.92"></polygon><polygon class="cls-2" points="204.57 10.56 240.11 10.56 238.69 18.25 211.38 18.25 208.02 37.69 229.68 37.69 228.26 45.38 206.61 45.38 202.1 71.46 193.88 71.46 204.57 10.56"></polygon><polygon class="cls-2" points="268.74 10.56 276.96 10.56 266.26 71.46 258.04 71.46 268.74 10.56"></polygon><polygon class="cls-2" points="344.39 71.46 336.53 71.46 316.81 25.58 308.77 71.46 300.55 71.46 311.25 10.56 319.38 10.56 338.74 56.08 346.87 10.56 355.09 10.56 344.39 71.46"></polygon><polygon class="cls-2" points="389.38 10.56 425.44 10.56 424.02 18.25 396.18 18.25 392.82 37.69 417.13 37.69 415.71 45.38 391.41 45.38 388.14 63.77 416.86 63.77 415.63 71.46 378.68 71.46 389.38 10.56"></polygon><path class="cls-2" d="M488.1,71.46h-9.99l-11.84-22.8h-7.78l-3.89,22.8h-8.31l10.7-60.9h23.42c4.07,0,7.34.97,9.81,2.92,4.95,3.8,6.01,9.46,4.86,16.17-.88,4.95-3.01,9.19-6.28,12.73-3.27,3.54-7.6,5.57-12.99,6.01l12.29,23.07ZM463.88,18.25l-3.98,22.72h14.5c6.98,0,11.14-4.95,12.2-11.31,1.06-6.28-1.24-11.4-7.87-11.4h-14.85Z"></path><polygon class="cls-2" points="570.02 10.56 605.55 10.56 604.14 18.25 576.83 18.25 573.47 37.69 595.13 37.69 593.71 45.38 572.06 45.38 567.55 71.46 559.33 71.46 570.02 10.56"></polygon><polygon class="cls-2" points="634.19 10.56 642.41 10.56 632.95 63.77 657.79 63.77 656.55 71.46 623.49 71.46 634.19 10.56"></polygon><polygon class="cls-2" points="695.61 10.56 731.67 10.56 730.26 18.25 702.42 18.25 699.06 37.69 723.36 37.69 721.95 45.38 697.64 45.38 694.37 63.77 723.1 63.77 721.86 71.46 684.92 71.46 695.61 10.56"></polygon><polygon class="cls-2" points="763.22 10.56 799.28 10.56 797.87 18.25 770.03 18.25 766.67 37.69 790.97 37.69 789.56 45.38 765.25 45.38 761.98 63.77 790.71 63.77 789.47 71.46 752.53 71.46 763.22 10.56"></polygon><polygon class="cls-2" points="825 10.56 870.25 10.56 868.93 18.34 850.45 18.34 841.08 71.46 832.78 71.46 842.14 18.34 823.67 18.34 825 10.56"></polygon></svg>
+    </div>
+    </div>
+
+    <!-- Meta -->
+    <div class="flex flex-col items-end gap-1">
+      <div class="text-[10px] font-syne font-semibold uppercase tracking-widest text-fleet-dim">Platform Sitemap &amp; Architecture</div>
+      <span class="text-xs font-medium px-3 py-0.5 rounded-full border border-[#c9a84c]/50 bg-[#c9a84c]/15 text-[#e8c97a]">v1.0 · Internal Use</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════
+     LEGEND BAR
+═══════════════════════════ -->
+<div class="bg-[#1a1a1a] border-b border-fleet sticky top-[73px] z-40">
+  <div class="max-w-[1600px] mx-auto px-12 py-3.5 flex items-center gap-8 flex-wrap">
+    <span class="text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim">Access Key</span>
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full dot-admin"></span>
+      <span class="text-xs text-fleet-mid">Admin — Full access</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full dot-dispatcher"></span>
+      <span class="text-xs text-fleet-mid">Dispatcher / Operations — Operational access</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full dot-driver"></span>
+      <span class="text-xs text-fleet-mid">Driver — Limited mobile access</span>
+    </div>
+    <div class="ml-auto flex gap-2 flex-wrap">
+      <span class="flex items-center gap-1.5 text-[11px] font-medium px-3 py-1 rounded-full bg-[#c9a84c]/15 border border-[#c9a84c]/40 text-[#e8c97a]">● Admin</span>
+      <span class="flex items-center gap-1.5 text-[11px] font-medium px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/35 text-blue-400">● Dispatcher</span>
+      <span class="flex items-center gap-1.5 text-[11px] font-medium px-3 py-1 rounded-full bg-emerald-600/15 border border-emerald-500/30 text-emerald-300">● Driver</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════
+     MAIN
+═══════════════════════════ -->
+<main class="max-w-[1600px] mx-auto px-12 py-10 pb-24">
+
+
+  <!-- ─── SECTION LABEL ─── -->
+  <div class="flex items-center gap-4 mb-6">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">Role Permissions Overview</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+
+  <!-- PERMISSIONS TABLE -->
+  <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden mb-14">
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-[#1a1a1a]">
+          <th class="text-left px-4 py-3 text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim border-b border-bright w-48">Module</th>
+          <th class="text-left px-4 py-3 text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim border-b border-bright">Admin</th>
+          <th class="text-left px-4 py-3 text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim border-b border-bright">Dispatcher</th>
+          <th class="text-left px-4 py-3 text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim border-b border-bright">Driver</th>
+          <th class="text-left px-4 py-3 text-[10px] font-syne font-bold uppercase tracking-widest text-fleet-dim border-b border-bright">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- helper macro via repeated rows -->
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">🏠 Dashboard</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Own jobs only</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Driver sees personal job feed</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">📋 Jobs</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View &amp; Update status</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Driver cannot create/delete jobs</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">👥 Clients</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View + Create</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Client data hidden from drivers</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">🧑 Drivers</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View + assign</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Own profile only</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Drivers update own docs/availability</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">🚛 Fleet</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View + assign</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Assigned vehicle only</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">MOT/insurance alerts admin only</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">💰 Quotes</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Financial data protected</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">🧾 Invoices</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full CRUD</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View + create</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Payment management admin only</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">🗓 Scheduling</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View own schedule</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Drivers see calendar read-only</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">⛽ Mileage &amp; Expenses</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">View + approve</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Submit own expenses</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Driver submits, admin approves</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">📂 Documents</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Upload + view</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Own docs only</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Drivers upload licence/insurance</td>
+        </tr>
+        <tr class="table-row border-b border-fleet">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">📊 Reports</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-amber-400">Operational only</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">Revenue reports admin only</td>
+        </tr>
+        <tr class="table-row">
+          <td class="px-4 py-2.5 text-sm font-medium text-fleet-text">⚙️ Settings</td>
+          <td class="px-4 py-2.5 text-xs text-emerald-400 font-semibold">Full</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-red-400">No access</td>
+          <td class="px-4 py-2.5 text-xs text-fleet-dim">System config admin restricted</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       01 DASHBOARD
+  ══════════════════════════════════════ -->
+  <div class="flex items-center gap-4 mb-6 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">01 — Dashboard</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+
+  <!-- Stat tiles -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">📋</div>
+      <div class="text-xs text-fleet-dim font-medium">Jobs Today</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/10 text-[#c9a84c] border border-[#c9a84c]/25">Real-time</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">🔄</div>
+      <div class="text-xs text-fleet-dim font-medium">Jobs In Progress</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-500/12 text-amber-400 border border-amber-500/25">Live</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">✅</div>
+      <div class="text-xs text-fleet-dim font-medium">Completed Today</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/12 text-emerald-400 border border-emerald-600/25">Tracked</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">💬</div>
+      <div class="text-xs text-fleet-dim font-medium">Pending Quotes</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-purple-600/12 text-purple-300 border border-purple-500/25">Action needed</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">🧑</div>
+      <div class="text-xs text-fleet-dim font-medium">Drivers Active</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/12 text-emerald-400 border border-emerald-600/25">Live</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">💷</div>
+      <div class="text-xs text-fleet-dim font-medium">Revenue Today</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-500/12 text-amber-400 border border-amber-500/25">Finance</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">🚗</div>
+      <div class="text-xs text-fleet-dim font-medium">Active Vehicles</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/10 text-[#c9a84c] border border-[#c9a84c]/25">Fleet</span>
+    </div>
+    <div class="bg-[#141414] border border-fleet rounded-xl p-4 text-center hover:border-bright transition-colors">
+      <div class="text-2xl mb-1">🔔</div>
+      <div class="text-xs text-fleet-dim font-medium">Alerts &amp; Notifications</div>
+      <span class="mt-1.5 inline-block text-[10px] px-2 py-0.5 rounded-full bg-red-500/12 text-red-400 border border-red-500/25">Urgent</span>
+    </div>
+  </div>
+
+  <!-- Dashboard cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <!-- Main Dashboard -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">🏠</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">Main Dashboard</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/dashboard</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-admin"></span>
+          <span class="w-2 h-2 rounded-full dot-dispatcher"></span>
+          <span class="w-2 h-2 rounded-full dot-driver"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03] group">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Operational overview widgets</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Today's job feed</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid flex-1">Revenue summary</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Driver status board</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Recent activity timeline</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Quick-create job shortcut</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Alerts panel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Driver Mobile Dashboard -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">📱</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">Driver Mobile Dashboard</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/driver/home</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-driver"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid flex-1">My jobs today</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30">Mobile</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid flex-1">Current job details</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30">Mobile</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Start / complete job actions</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid flex-1">Navigation launch (Google Maps)</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">API</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Upload job photos</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+          <span class="text-xs text-fleet-mid">Availability toggle</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end dashboard cards -->
+
+
+  <!-- ══════════════════════════════════════
+       02 JOBS
+  ══════════════════════════════════════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">02 — Jobs Management</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+
+  <!-- Status Flow -->
+  <div class="bg-[#141414] border border-fleet rounded-2xl px-6 py-5 mb-4">
+    <div class="font-syne font-semibold text-[11px] uppercase tracking-widest text-fleet-mid mb-4">Job Status Flow</div>
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-white/5 text-fleet-mid border-white/15">Quote Requested</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-[#c9a84c]/12 text-[#e8c97a] border-[#c9a84c]/35">Quote Sent</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-[#c9a84c]/10 text-[#e8c97a] border-[#c9a84c]/30">Accepted</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Scheduled</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-sky-500/10 text-sky-300 border-sky-500/30">Driver Assigned</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-orange-500/10 text-orange-300 border-orange-500/30">In Progress</span>
+      <span class="text-fleet-dim text-sm">→</span>
+      <span class="flow-step text-[11px] font-semibold px-3 py-1.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Completed</span>
+    </div>
+    <div class="mt-3 text-[11px] text-fleet-dim">⚠ Any status can transition to <span class="inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full border bg-red-500/10 text-red-300 border-red-500/30">Cancelled</span></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <!-- All Jobs -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">📋</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">All Jobs</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/jobs</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-admin"></span>
+          <span class="w-2 h-2 rounded-full dot-dispatcher"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Filterable jobs table (status, date, driver)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Search by client, registration, location</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Bulk status update</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Export to CSV / PDF</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Quick-assign driver</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Status Filters</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-white/5 text-fleet-mid border-white/15">Quote Requested</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/12 text-[#e8c97a] border-[#c9a84c]/35">Quote Sent</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/10 text-[#e8c97a] border-[#c9a84c]/30">Accepted</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Scheduled</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-orange-500/10 text-orange-300 border-orange-500/30">In Progress</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Completed</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-red-500/10 text-red-300 border-red-500/30">Cancelled</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create New Job -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">➕</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">Create New Job</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/jobs/new</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-admin"></span>
+          <span class="w-2 h-2 rounded-full dot-dispatcher"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Client selection / create new</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Job type (Trade Plate / Transporter / Removals)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Pickup &amp; delivery address fields</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle registration &amp; description</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Requested date / time</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Auto-generate quote option</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-300 border border-emerald-600/30 ml-auto">Auto</span></div>
+      </div>
+    </div>
+
+    <!-- Job Details -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">🔍</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">Job Details</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/jobs/:id</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-admin"></span>
+          <span class="w-2 h-2 rounded-full dot-dispatcher"></span>
+          <span class="w-2 h-2 rounded-full dot-driver"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Job summary card &amp; status timeline</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Assigned driver &amp; vehicle</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Route map (Google Maps embed)</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Maps</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Mileage log &amp; photo gallery</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Notes &amp; communication log</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Linked invoice</span></div>
+      </div>
+    </div>
+
+    <!-- Route & Mileage -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">🗺</div>
+        <div class="flex-1">
+          <div class="font-syne font-semibold text-sm text-white">Route &amp; Mileage</div>
+          <div class="text-[10px] text-fleet-dim font-mono mt-0.5">/jobs/:id/route</div>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full dot-admin"></span>
+          <span class="w-2 h-2 rounded-full dot-dispatcher"></span>
+          <span class="w-2 h-2 rounded-full dot-driver"></span>
+        </div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Google Maps route display</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">API</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Distance calculation (miles/km)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Start / end mileage capture</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Driver navigation launch</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30 ml-auto">Mobile</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Multi-stop route support</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ CLIENTS ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">03 — Clients / Customers</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">👥</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">All Clients</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/clients</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Client directory table</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Search &amp; filter by type</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Outstanding invoice count</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Import clients (CSV)</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Client Types</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/10 text-[#e8c97a] border-[#c9a84c]/30">Dealership</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Private</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Auction</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/12 text-[#e8c97a] border-[#c9a84c]/35">Business</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">🪪</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Client Profile</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/clients/:id</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Contact details &amp; primary contact</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Saved addresses (Pickup/Delivery)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Job history tab &amp; invoices tab</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Notes &amp; communication log</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Pricing agreements</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">➕</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Create / Edit Client</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/clients/new</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Client type selector</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Company &amp; contact fields</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Multiple contact persons</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Custom pricing override</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">VAT registration number</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ DRIVERS ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">04 — Driver Management</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">🧑‍💼</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">All Drivers</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/drivers</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver directory with status badges</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Availability filter</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Document expiry alerts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Quick-assign to job</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Driver Status</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Available</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-orange-500/10 text-orange-300 border-orange-500/30">On Job</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-white/5 text-fleet-mid border-white/15">Off Duty</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-red-500/10 text-red-300 border-red-500/30">Suspended</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">📄</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Driver Profile</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/drivers/:id</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span><span class="w-2 h-2 rounded-full dot-driver"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Personal details</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driving licence upload &amp; expiry</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Insurance documents</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Assigned jobs tab</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Availability calendar</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Pay rate / rate card</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">📊</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Driver Performance</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/drivers/:id/stats</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Jobs completed this month</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Total mileage driven</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">On-time delivery rate</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Revenue generated per driver</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Expense claims history</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ FLEET ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">05 — Fleet &amp; Vehicles</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">🚛</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">All Vehicles</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/fleet</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle list with type &amp; status</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">MOT &amp; insurance expiry alerts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Current assigned driver</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Quick assign to job</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Vehicle Types</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/10 text-[#e8c97a] border-[#c9a84c]/30">Trade Plate</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Transporter</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/12 text-[#e8c97a] border-[#c9a84c]/35">Van / Removals</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">🔧</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Vehicle Profile</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/fleet/:id</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Registration &amp; make/model</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">MOT &amp; insurance expiry dates</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Maintenance logs</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Mileage tracking history</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Cost per mile analysis</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">🛠</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Maintenance Logs</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/fleet/:id/maintenance</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Service history entries</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">MOT records</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Repair cost tracking</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Next service reminder</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Document uploads (receipts)</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ QUOTES ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">06 — Quotes</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">💬</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">All Quotes</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/quotes</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Quote list with status &amp; value</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Filter by status / date / client</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Expiry date warnings</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Convert to job action</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Quote Statuses</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-white/5 text-fleet-mid border-white/15">Draft</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-[#c9a84c]/10 text-[#e8c97a] border-[#c9a84c]/30">Sent</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Accepted</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-red-500/10 text-red-300 border-red-500/30">Declined</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Expired</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">✏️</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Create / Edit Quote</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/quotes/new</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Client selection</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Distance calculation (Google Maps)</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Maps</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Pricing matrix auto-apply</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-300 border border-emerald-600/30 ml-auto">Auto</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">VAT calculation (20%)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Send via email / SMS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">API</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Quote PDF preview &amp; download</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Convert accepted quote to job</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ INVOICES ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">07 — Invoices &amp; Payments</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">🧾</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">All Invoices</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/invoices</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Invoice list with amounts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Overdue alerts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Revenue totals by period</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Batch send reminders</span></div>
+      </div>
+      <div class="px-4 pb-4 pt-2 border-t border-fleet">
+        <div class="text-[10px] text-fleet-dim uppercase tracking-widest font-semibold mb-2">Payment Status</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-300 border-amber-500/30">Unpaid</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-emerald-600/10 text-emerald-300 border-emerald-600/30">Paid</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-red-500/10 text-red-300 border-red-500/30">Overdue</span>
+          <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-orange-500/10 text-orange-300 border-orange-500/30">Partial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">📝</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Create Invoice</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/invoices/new</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Link to completed job(s)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Auto-populate from job data</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-300 border border-emerald-600/30 ml-auto">Auto</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">VAT breakdown (20%)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Payment terms (7/14/30 days)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Stripe payment link</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Stripe</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">PDF export</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center text-base shrink-0">💳</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Invoice Details</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/invoices/:id</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Full invoice preview</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Payment history log</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Mark as paid / partial payment</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Send payment reminder</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Credit note creation</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ SCHEDULING ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">08 — Scheduling &amp; Dispatch</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">🗓</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Dispatch Board</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/dispatch</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Kanban-style job board by status</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Drag &amp; drop job assignment</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver availability column</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Unassigned jobs queue</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Real-time status updates</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">📅</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Calendar View</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/dispatch/calendar</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span><span class="w-2 h-2 rounded-full dot-driver"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Day / Week / Month views</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Jobs plotted by date &amp; driver</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Colour-coded by job status</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver absence blocking</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle unavailability overlay</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">🔗</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Job Scheduling</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/dispatch/schedule</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Assign driver to job</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Conflict detection</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-300 border border-emerald-600/30 ml-auto">Smart</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Driver SMS on assign</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">SMS</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Route optimisation suggestion</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Maps</span></div>
+      </div>
+    </div>
+
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">🗺</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Route Planning</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/dispatch/routes</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Multi-job route view on map</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Maps</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Distance &amp; time estimates</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver workload visualisation</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Region clustering view</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════ REPORTS ══════ -->
+  <div class="flex items-center gap-4 mb-5 mt-14">
+    <span class="font-syne font-bold text-[11px] uppercase tracking-[0.18em] text-fleet-dim whitespace-nowrap">09–14 — Reports, Mileage, Docs, Notifications, Integrations, Settings</span>
+    <div class="flex-1 h-px divider-gradient"></div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+
+    <!-- Reports -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">📊</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Reports &amp; Analytics</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/reports</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Revenue reports</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Jobs completed by month</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver performance comparison</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle utilisation rates</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Profit per job</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Export to CSV / Excel</span></div>
+      </div>
+    </div>
+
+    <!-- Mileage & Expenses -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600/15 flex items-center justify-center text-base shrink-0">⛽</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Mileage &amp; Expenses</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/mileage · /expenses</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span><span class="w-2 h-2 rounded-full dot-driver"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Per-job mileage records</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">HMRC rate calculation</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-300 border border-emerald-600/30 ml-auto">Auto</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Driver expense submissions</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30 ml-auto">Mobile</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Approve / reject workflow</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#c9a84c]/12 text-[#e8c97a] border border-[#c9a84c]/35 ml-auto">Admin</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Fuel logs &amp; receipt upload</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle costs per mile</span></div>
+      </div>
+    </div>
+
+    <!-- Documents -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-[#c9a84c]/12 flex items-center justify-center text-base shrink-0">📂</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Documents &amp; Media</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/documents</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span><span class="w-2 h-2 rounded-full dot-driver"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Job photos &amp; delivery notes</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Driver licence &amp; insurance upload</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Vehicle MOT &amp; V5C docs</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Client contracts &amp; agreements</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Expiry date tracking</span></div>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center text-base shrink-0">🔔</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Notifications</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/notifications</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span><span class="w-2 h-2 rounded-full dot-dispatcher"></span><span class="w-2 h-2 rounded-full dot-driver"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">In-app notification feed</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Job status change alerts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Document expiry warnings</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Overdue invoice alerts</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">SMS &amp; email comms log</span></div>
+      </div>
+    </div>
+
+    <!-- Integrations -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-sky-500/15 flex items-center justify-center text-base shrink-0">🔌</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Integrations</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/settings/integrations</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Google Maps API</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Maps</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Stripe Payments</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">Stripe</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid flex-1">Twilio SMS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 ml-auto">SMS</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Email (SMTP / SendGrid)</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Xero / QuickBooks · HMRC MTD</span></div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="bg-[#141414] border border-fleet rounded-2xl overflow-hidden card-hover">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-fleet">
+        <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-base shrink-0">⚙️</div>
+        <div class="flex-1"><div class="font-syne font-semibold text-sm text-white">Settings</div><div class="text-[10px] text-fleet-dim font-mono mt-0.5">/settings</div></div>
+        <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full dot-admin"></span></div>
+      </div>
+      <div class="px-4 py-3.5 space-y-1.5">
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Company settings &amp; branding</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Pricing matrix &amp; VAT settings</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">User management &amp; roles</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Role permissions matrix</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">Email templates</span></div>
+        <div class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-white/[0.03]"><span class="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span><span class="text-xs text-fleet-mid">API keys &amp; webhooks</span></div>
+      </div>
+    </div>
+
+  </div><!-- end final grid -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#141414] border-t border-fleet">
+  <div class="max-w-[1600px] mx-auto px-12 py-6 flex items-center justify-between flex-wrap gap-4">
+    <div class="text-xs text-fleet-dim">
+      <span class="text-fleet-mid font-medium">Finer Fleet CRM</span> · Platform Sitemap v1.0 · Internal Architecture Document<br>
+      <span class="text-[11px]">14 modules · 3 user roles · 80+ pages &amp; sub-sections · Built with Tailwind CSS</span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">Google Maps API</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">Stripe</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">Twilio SMS</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">SendGrid</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">Xero / QuickBooks</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">HMRC MTD</span>
+      <span class="text-[10px] font-medium px-3 py-1 rounded-full border border-bright text-fleet-dim">UK VAT 20%</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
